@@ -1,12 +1,19 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { createGame } from './game/createGame';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+const game = createGame('player1', 'player2');
 
-if (environment.production) {
-  enableProdMode();
-}
+game.wonPoint('player1');
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+game.wonPoint('player1');
+
+game.wonPoint('player2');
+
+console.log(game.getScore()); // Thirty-Fifteen
+
+game.wonPoint('player2');
+
+game.wonPoint('player2');
+
+game.wonPoint('player2');
+
+console.log(game.getScore()); // Win for player2
