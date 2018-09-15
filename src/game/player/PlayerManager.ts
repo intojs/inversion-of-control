@@ -1,4 +1,4 @@
-import { PlayerService } from '../gameplay/PlayerService';
+import { ManagePlayers } from '../gameplay/ManagePlayers';
 import { Player } from '../gameplay/Player';
 
 const createPlayer = (name: string, points?: number): Player => ({name, points: points || 0});
@@ -11,7 +11,7 @@ const hasName = (name: string, player: Player): boolean => name === player.name;
 
 const incrementPoints = (player: Player): Player => ({...player, points: player.points += 1});
 
-const playerService: PlayerService = {
+const PlayerManager: ManagePlayers = {
   createPlayer,
   getName,
   getPoints,
@@ -19,4 +19,4 @@ const playerService: PlayerService = {
   incrementPoints
 };
 
-export { playerService };
+export { PlayerManager };
