@@ -9,7 +9,7 @@ const getPoints = (player: Player): number => player.points;
 
 const hasName = (name: string, player: Player): boolean => name === player.name;
 
-const incrementPoints = (player: Player): Player => ({...player, points: player.points += 1});
+const incrementPoints = (player: Player): Player => ({...player, points: player.points + 1});
 
 const PlayerManager: ManagePlayers = {
   createPlayer,
